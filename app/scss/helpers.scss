@@ -67,9 +67,16 @@
 .btn-black {
 	background-color: $main-black !important;
 	color: #fff !important;
+	padding: 10px 30px;
 	&:hover {
 		color: $main-black !important;
 		box-shadow:inset 0px 0px 0px 1px $main-black !important;
 		background-color: #fff!important;
+		transition: .3s !important;
 	}
+}
+
+.container-1300 {
+	max-width: 1300px;
+    margin: 0 auto;
 }

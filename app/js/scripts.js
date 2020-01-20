@@ -2,9 +2,17 @@
 
 $(document).ready(function() {
 
-  $('.slider').slick({
-    prevArrow: '<button type="button" class="slick-prev"><svg width="15" height="24" viewBox="0 0 15 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M14.82 21.18L5.66 12L14.82 2.82L12 0L0 12L12 24L14.82 21.18Z" fill="currentColor"/> </svg></button>',
-    nextArrow: '<button type="button" class="slick-next"><svg width="15" height="24" viewBox="0 0 15 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M0.180002 2.82L9.34 12L0.180001 21.18L3 24L15 12L3 -1.04907e-06L0.180002 2.82Z" fill="currentColor"/> </svg></button>',
+  var sliderPrevArrow = '<button type="button" class="slick-prev"><svg width="15" height="24" viewBox="0 0 15 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M14.82 21.18L5.66 12L14.82 2.82L12 0L0 12L12 24L14.82 21.18Z" fill="currentColor"/> </svg></button>';
+  var sliderNextArrow = '<button type="button" class="slick-next"><svg width="15" height="24" viewBox="0 0 15 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M0.180002 2.82L9.34 12L0.180001 21.18L3 24L15 12L3 -1.04907e-06L0.180002 2.82Z" fill="currentColor"/> </svg></button>';
+
+  $('.text-blocks-slider .slider').slick({
+    prevArrow: sliderPrevArrow,
+    nextArrow: sliderNextArrow,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    appendArrows: $('.text-blocks-slider .slider-btns'),
+    infinite: true,
+    centerMode: true,
     responsive: [
       {
         breakpoint: 530,
@@ -16,73 +24,54 @@ $(document).ready(function() {
   ]
   });
 
-  $('.accordion').on('click', '.link', function () {
-    $(this).parents('.accordion').find('.active').removeClass('active');
-    $(this).parents('.item').toggleClass('active');
-  });
+  // Set text slider number func
+  function setTextSliderNum() {
+    var currentNum = +$('.text-blocks-slider .slider').slick('slickCurrentSlide') + 1;
+    var count = $('.text-blocks-slider .slider').slick('getSlick').slideCount;
 
-  // якір
-  
-  if (document.querySelector('.main-content')) {
-    $(".go-to").on('click',function(e){
-  
-      e.preventDefault();
-  
-      var anchor = $(this).attr("href");
-  
-      if ($(anchor).length) {
-        var run = $(anchor).offset().top;
-  
-        if($('body').find(".article-container .nav").length > 0 && $(window).width() > 1024){
-          $('body,html').stop().animate({scrollTop: run}, 1500);
-        } else {
-          let mobileLinks = $('.main-article .nav').height();
-          $('body,html').stop().animate({scrollTop: run - mobileLinks + 1}, 1500);
-        }
-  
-  
-      } else {
-        console.warn("ID don't search!")
-      }
-    });
-  }
-
-  $('.toggle-button').on('click', function () {
-    $(this).toggleClass('active');
-
-    $('.nav .links').stop().slideToggle();
-  });
-
-  $.fn.forceNumbericOnly = function () {
-    return this.each(function () {
-      $(this).keydown(function (e) {
-        var key = e.charCode || e.keyCode || 0;
-        return (key == 8 || key == 9 || key == 46 || (key >= 37 && key <= 40) || (key >=
-          48 && key <= 57) || (key >= 96 && key <= 105) || key == 107 || key ==
-          109 || key == 173 || key == 61);
-      });
-    });
-  };
-
-  $('input[type=tel]').forceNumbericOnly();
-
-  // mobile menu
-  $('.close-mobile-menu').click(function() {
-    if ($('.main-nav').hasClass('open-mobile-menu')) {
-      $('.main-nav').removeClass('open-mobile-menu');
-      $('body').removeClass('fixed');
-    } else {
-      $('.main-nav').addClass('open-mobile-menu');
-      $('body').addClass('fixed');
+    if (+currentNum < 10) {
+      currentNum = "0" + currentNum;
     }
-  });
+    if (+count < 10) {
+      count = "0" + count;
+    }
+
+    $('.text-blocks-slider .slider-btns .num .current').text(currentNum);
+    $('.text-blocks-slider .slider-btns .num .all').text(count);
+  };
   
-  // mobile menu item
-  if (document.querySelector('.main-content')) {
-    $('.main-nav a').click(function() {
-      $('body').removeClass('fixed');
-      $('.main-nav').removeClass('open-mobile-menu');
-    });
+  // init set text slider number func
+  if (document.querySelector('.text-blocks-slider .slider')) {
+    setTextSliderNum();
+  
+    $('.text-blocks-slider .slider-btns .slick-arrow').click(function () {
+      setTextSliderNum();
+    })
   }
+
+  // Slider with accordion
+  $('.descr-img-slider .slider').slick({
+    prevArrow: sliderPrevArrow,
+    nextArrow: sliderNextArrow,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    appendArrows: $('.descr-img-slider .slider-btns'),
+    infinite: true,
+    variableWidth: true,
+    // adaptiveHeight: true,
+    // centerMode: true,
+    responsive: [
+      {
+        breakpoint: 530,
+        settings: {
+          arrows: false,
+          dots: true
+        }
+      },
+  ]
+  });
+
+  var currentNum = $('.descr-img-slider .slider').slick('slickCurrentSlide');
+
 
 });
