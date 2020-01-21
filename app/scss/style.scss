@@ -13,9 +13,9 @@ body{
 	font-size: 16px;
 	line-height: 24px;
     min-height: 100%;
-    max-width: 1700px;
+    max-width: 1600px;
     margin: 0 auto 100px;
-    background: #f3f3f3;
+    background: #fff;
 }
 *{
 	font-family: $base-font;
@@ -30,7 +30,7 @@ a {
     display: inline-block;
 }
 h3 {
-    font-size: 55px;
+    font-size: 50px;
     line-height: 1.3;
 }
 h4 {
@@ -48,7 +48,7 @@ h4 {
     .center {
         padding: 0 5vw;
         position: relative;
-        z-index: 3;
+        z-index: 1000;
         background-color: #fff;
     }
 
@@ -85,14 +85,22 @@ h4 {
     }
 
     .fixed-header {
-        max-width: 1700px;
+        max-width: 1600px;
         width: 100%;
         position: fixed;
         top: 0;
         margin: auto;
         left: 0;
         right: 0;
-        z-index: 2;
+        z-index: 999;
+        display: flex;
+        justify-content: flex-end;
+        .main-nav {
+            .btn {
+                height: 90px;
+                padding: 0 30px;
+            }
+        }
     }
 }
 
@@ -202,7 +210,7 @@ h4 {
                     &:before {
                         content: '';
                         position: absolute;
-                        background-color: $bg-gray;
+                        background-color: #fff;
                         top: 0;
                         left: 0;
                         width: 5vw;
@@ -239,6 +247,177 @@ h4 {
                         box-shadow: -9px 13px 16px -14px rgba(0,0,0,0.85);
                     }
                 }
+            }
+        }
+    }
+}
+
+.top-video-section {
+    padding: 60px 0 50px 12vw;
+    margin: 50px 0 0 0;
+    .title {
+        display: flex;
+        h3 {
+            flex-basis: 787px;
+        }
+    }
+    .content {
+        display: grid;
+        grid-template-columns: 1fr 1.8fr;
+        grid-column-gap: 7%;
+        grid-template-rows: minmax(100%, 930px);
+        .left {
+            padding: 8vw 0 0 0;
+            p {
+                font-size: 22px;
+                line-height: 1.6;
+            }
+            .btn-block {
+                padding: 60px 0 0 0;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-column-gap: 20px;
+            }
+        }
+        .right {
+            margin: 0 0 0 5vw;
+            position: relative;
+            .video-wrap-outer {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                .video-wrap-inner {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: rgba(0,0,0,.35);
+                        z-index: 2;
+                        transform: scale(0);
+                        transition: .01s;
+                    }
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        width: 0;
+                        height: 0;
+                        border-style: solid;
+                        border-width: 25px 0 25px 50px;
+                        border-color: transparent transparent transparent #fff;
+                        z-index: 3;
+                        transform: scale(0);
+                        transition: .3s;
+                    }
+                    &.pause {
+                        &:before {
+                            transform: scale(1);
+                            transition: .01s;
+                        }
+                        &:after {
+                            transform: scale(1);
+                            transition: .3s;
+                        }
+                    }
+                }
+            }
+            video {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                min-width: 100%;
+                min-height: 100%;
+                width: auto;
+                height: auto;
+                overflow: hidden;
+                z-index: 1;
+            }
+            .tl-white-sq {
+                position: absolute;
+                background-color: #fff;
+                z-index: 2;
+                height: 5vw;
+                width: 16vw;
+                top: 0;
+                left: 0;
+            }
+            .tr-white-sq {
+                position: absolute;
+                background-color: #fff;
+                top: -2vw;
+                right: 10vw;
+                width: 4vw;
+                height: 4vw;
+                z-index: 2;
+                box-shadow: -9px 13px 16px -14px rgba(0,0,0,.85);
+            }
+            .ml-pink-sq {
+                position: absolute;
+                background-color: $pink;
+                bottom: 12vw;
+                left: -5vw;
+                width: 7vw;
+                height: 7vw;
+                z-index: 2;
+            }
+            .bl-white-sq {
+                position: absolute;
+                background-color: #fff;
+                z-index: 2;
+                height: 3vw;
+                width: 7vw;
+                bottom: 0;
+                left: 0;
+            }
+            .br-white-sq-1 {
+                position: absolute;
+                background-color: #fff;
+                z-index: 2;
+                height: 5vw;
+                width: 6vw;
+                bottom: 0;
+                right: 0;
+            }
+            .br-yelow-sq {
+                position: absolute;
+                background-color: $powder;
+                z-index: 2;
+                width: 7vw;
+                height: 7vw;
+                bottom: -1vw;
+                right: 5vw;
+            }
+            .br-white-sq-2 {
+                position: absolute;
+                background-color: #fff;
+                z-index: 2;
+                height: 13vw;
+                width: 4.7vw;
+                bottom: 2vw;
+                right: 2.2vw;
+                box-shadow: -9px 13px 16px -14px rgba(0,0,0,.85);
+            }
+            .bg-logo {
+                position: absolute;
+                background-image: url(../img/video-bg-logo.png);
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 19vw;
+                height: 100%;
+                top: -8vw;
+                right: 0;
+                z-index: -1;
             }
         }
     }

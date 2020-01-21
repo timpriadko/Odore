@@ -64,14 +64,32 @@
 	margin: 0 auto;
 }
 
+.btn {
+	box-shadow:inset 0px 0px 0px 1px $main-black;
+	padding: 15px 30px;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	&:hover {
+		transition: .3s;
+	}
+
+}
+.btn-white {
+	background-color: #fff;
+	color: $main-black;
+	&:hover {
+		color: #fff;
+		background-color: $blue;
+	}
+}
 .btn-black {
 	background-color: $main-black !important;
 	color: #fff !important;
-	padding: 10px 30px;
 	&:hover {
 		color: $main-black !important;
 		box-shadow:inset 0px 0px 0px 1px $main-black !important;
-		background-color: #fff!important;
+		background-color: $blue!important;
 		transition: .3s !important;
 	}
 }
