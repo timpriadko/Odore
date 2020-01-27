@@ -1,15 +1,17 @@
-var gulp       	 = require('gulp'),
-	sass 		 = require('gulp-sass'),
-	browserSync  = require('browser-sync'),
-	concat       = require('gulp-concat'),
-	uglify       = require('gulp-uglifyjs'),
-	cssnano      = require('gulp-cssnano'),
-	rename       = require('gulp-rename'),
-	del          = require('del'),
-	cache        = require('gulp-cache'),
-	autoprefixer = require('gulp-autoprefixer'),
-	babel        = require('gulp-babel');
-	sourcemaps 	 = require('gulp-sourcemaps');
+var gulp       	 	 = require('gulp'),
+	sass 		 	 = require('gulp-sass'),
+	browserSync  	 = require('browser-sync'),
+	concat       	 = require('gulp-concat'),
+	uglify       	 = require('gulp-uglifyjs'),
+	cssnano      	 = require('gulp-cssnano'),
+	rename       	 = require('gulp-rename'),
+	del          	 = require('del'),
+	cache        	 = require('gulp-cache'),
+	autoprefixer 	 = require('gulp-autoprefixer'),
+	babel        	 = require('gulp-babel');
+	sourcemaps 	 	 = require('gulp-sourcemaps');
+	// imagemin 		 = require('gulp-imagemin');
+	// pngquant 		 = require('imagemin-pngquant');
 
 gulp.task('sass', function(){
 	return gulp.src('app/scss/*.scss')
@@ -76,18 +78,18 @@ gulp.task('clean', function() {
 	return del.sync('dist');
 });
 
-gulp.task('img', function() {
-	return gulp.src('app/img/**/*')
-		.pipe(cache(imagemin({
-			interlaced: true,
-			progressive: true,
-			svgoPlugins: [{removeViewBox: false}],
-			use: [pngquant()]
-		})))
-		.pipe(gulp.dest('dist/img'));
-});
+// gulp.task('img', function() {
+// 	return gulp.src('app/img/**/*')
+// 		.pipe(cache(imagemin({
+// 			interlaced: true,
+// 			progressive: true,
+// 			svgoPlugins: [{removeViewBox: false}],
+// 			use: [pngquant()]
+// 		})))
+// 		.pipe(gulp.dest('dist/img'));
+// });
 
-gulp.task('build', ['clean', 'img', 'libscss', 'libsjs'], function() {
+gulp.task('build', ['clean', 'libscss', 'libsjs'], function() {
 
 	var buildCss = gulp.src([
 		'app/css/*.css',
