@@ -1,0 +1,247 @@
+// big-img-slider-section
+.big-img-slider-section {
+    position: relative;
+
+    .pagination {
+        transform: translateY(-8.5vw);
+        width: fit-content;
+        padding: 30px 30px 30px 11vw;
+        background-color: #fff;
+
+        .slick-dots {
+            li {
+                font-size: 14px;
+                width: 35px;
+                &.slick-active {
+                    font-size: 22px;
+                    &:after {
+                        content: '/';
+                        font-size: 27px;
+                        margin-left: 3px;
+                    }
+                }
+            }
+        }
+
+        .decor{
+            &:before {
+                content: '';
+                position: absolute;
+                background-color: $powder;
+                bottom: 0.5vw;
+                left: 0;
+                width: 7vw;
+                height: 9.5vw;
+                z-index: 1;      
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                background-color: #fff;
+                bottom: 4.7vw;
+                left: 3vw;
+                width: 5vw;
+                height: 8vw;
+                z-index: 2;
+                box-shadow: -9px 13px 16px -14px rgba(0,0,0,.85);      
+            }
+            .dots-decor {
+                position: absolute;
+                z-index: 2;
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 8vw;
+                height: 2vw;
+                left: 2vw;
+                bottom: -3vw;
+                transform: rotate(90deg);
+                background-image: url(../img/dots-decore.svg);
+            }
+        }
+    }
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 2.2fr 1fr;
+    padding: 0 8vw 0 0;
+    grid-template-rows: minmax(100%,660px);
+    .img {
+        background-size: cover;
+        height: 80%;
+    }
+    .text-block-wrap {
+        padding: 12.5vw 0 0 0;
+        height: fit-content;
+        .text-block {
+            height: fit-content;
+            background-color: #fff;
+            padding: 4vw 0 2.4vw 3.7vw;
+            margin: 0 0 0 -8.5vw;
+            position: relative;
+
+            &:before {
+                content: '';
+                position: absolute;
+                z-index: 1;
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 8vw;
+                height: 3vw;
+                left: 8vw;
+                top: 0;
+                background-image: url(../img/dots-decore.svg);
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                background-color: #fff;
+                top: -3.5vw;
+                left: 5.7vw;
+                width: 4vw;
+                height: 5vw;
+                z-index: 2;
+                box-shadow: -9px 13px 16px -14px rgba(0,0,0,.85)
+            }
+            .side-decor {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 30%;
+                background-color: $pink;
+                z-index: 0;
+                opacity: 0.4;
+            }
+            h3 {
+                position: relative;
+                z-index: 3;
+            }
+            p {
+                margin: 2.2vw 0 0 0;
+                width: 68%;
+                font-size: 21px;
+                line-height: 1.8;
+                position: relative;
+                z-index: 3;
+            }
+        }
+        .additionl {
+            text-transform: uppercase;
+            font-size: 13px;
+            line-height: 1.8;
+            padding: 2.3vw 0;
+            display: inline-block;
+            width: fit-content;
+            position: relative;
+            &:before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 1px;
+                background-color: #000;
+                left: 0;
+                bottom: 2.2vw;
+            }
+            &:after {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                border: 1px solid #000;
+                right: -1.8vw;
+                bottom: 0.5vw;
+                border-radius: 50%;
+                width: 4.5vw;
+                height: 4.5vw;
+            }
+        }
+    }
+}
+
+// big-img-decored-section
+.big-img-decored-section {
+    padding: 9vw 0 0 0;
+    position: relative;
+
+    &:before {
+        content: "";
+        position: absolute;
+        background-color: #fff;
+        top: 0;
+        right: 7vw;
+        width: 4.2vw;
+        height: 6.5vw;
+        z-index: 2;
+        box-shadow: -9px 13px 16px -14px rgba(0,0,0,.85);
+    }
+
+    .content {
+        grid-template-columns: 1.9fr 1fr;
+        position: relative;
+
+        .img {
+            height: 93%;
+        }
+
+        .text-block-wrap {
+            padding: 5vw 0 0;
+            .text-block {
+                margin: 0 0 0 -4.5vw;
+                padding: 0 0 6vw 2.5vw;
+
+                &:before {
+                    position: unset;
+                    width: 0;
+                    height: 0;
+                }
+                &:after {
+                    position: unset;
+                    width: 0;
+                    height: 0;
+                }
+
+                p {
+                    margin: 0;
+                    padding: 2vw 0 0 0;
+                    font-size: 17px;                
+                }
+                h3 {
+                    margin: 3vw 0 0 0;
+                }
+                .btn {
+                    margin: 2.8vw 0 0 0;
+                    position: relative;
+                    z-index: 1;
+                }
+                .side-decor {
+                    background-color: $powder;
+                }
+            }
+        }
+        
+        &:before {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 8vw;
+            height: 3vw;
+            right: 25vw;
+            bottom: 0;
+            background-image: url(../img/dots-decore.svg);
+        }
+        &:after {
+            content: "";
+            position: absolute;
+            background-color: #fff;
+            bottom: 0;
+            left: 5.6vw;
+            width: 4.2vw;
+            height: 7.2vw;
+            z-index: 2;
+            box-shadow: -9px 13px 16px -14px rgba(0,0,0,.85);
+        }
+    }
+}
