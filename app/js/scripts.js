@@ -132,6 +132,29 @@ $(document).ready(function() {
     ]
   });
 
+  // big-img-slider-section-min
+  $('.big-img-slider-section-min .slider').slick({
+    dots: true,
+    infinite: true,
+    slidesToShow: 1,
+    adaptiveHeight: true,
+    arrows: false,
+    appendDots: $('.big-img-slider-section-min .pagination'),
+    customPaging : function(slider, i) {
+      var thumb = $(slider.$slides[i]).data();
+      return '<a>0'+ (i+1) +'</a>';
+              },
+    responsive: [
+      {
+        breakpoint: 530,
+        settings: {
+          arrows: false,
+          dots: true
+        }
+      },
+    ]
+  });
+
 
   // end document ready
 });
