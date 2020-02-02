@@ -76,8 +76,6 @@ $(document).ready(function() {
     appendArrows: $('.descr-img-slider .slider-btns'),
     infinite: true,
     variableWidth: true,
-    // adaptiveHeight: true,
-    // centerMode: true,
     responsive: [
       {
         breakpoint: 530,
