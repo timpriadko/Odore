@@ -387,7 +387,7 @@ p {
         display: grid;
         grid-template-columns: 1fr 1.3fr;
         grid-column-gap: 7%;
-        grid-template-rows: minmax(100%,978px);
+        grid-template-rows: minmax(100%,968px);
         .left {
             padding: 9.1vw 0 0 11vw;
             position: relative;
@@ -746,7 +746,8 @@ p {
                     border-radius: 50%;
                     background-color: $pink_3;
                 }
-            }&:nth-of-type(4) .img {
+            }
+            &:nth-of-type(4) .img {
                 &:before {
                     content: '';
                     position: absolute;

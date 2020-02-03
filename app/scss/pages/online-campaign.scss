@@ -19,6 +19,7 @@
                 padding: 2vw 0 4.7vw 2.8vw;
                 margin: 0 0 -1.6vw -12.7vw;
                 position: relative;
+                max-width: 650px;
     
                 &:before {
                     content: '';
@@ -30,7 +31,7 @@
                     height: 3vw;
                     left: -2.4vw;
                     bottom: 0;
-                    background-image: url(../img/dots-decore.svg);
+                    background-image: url(../img/rectangle-w4-black.svg);
                 }
                 &:after {
                     content: '';
@@ -49,9 +50,8 @@
                     left: 0;
                     height: 92%;
                     width: 47%;
-                    background-color: $turquoise;
+                    background-color: #E2F8FD;
                     z-index: 0;
-                    opacity: 0.4;
                 }
                 h3 {
                     position: relative;
@@ -59,11 +59,13 @@
                 }
                 p {
                     margin: 2.2vw 0 0 0;
-                    width: 68%;
-                    font-size: 21px;
-                    line-height: 1.8;
+                    max-width: 570px;
                     position: relative;
                     z-index: 3;
+                    font-size: 20px;
+                    line-height: 38px;
+                    color: #030707;
+                    font-weight: 600;
                 }
             }
             .additionl {
@@ -144,12 +146,11 @@
         z-index: 1;
         background-repeat: no-repeat;
         background-size: cover;
-        width: 6vw;
-        height: 4vw;
-        right: .5vw;
-        top: 1vw;
-        transform: rotate(90deg);
-        background-image: url(../img/dots-decore.svg);
+        width: 4vw;
+        height: 6vw;
+        right: 1vw;
+        top: 0;
+        background-image: url(../img/rectangle-w5-purple.svg);
     }
     .decor-square {
         position: absolute;
@@ -177,22 +178,23 @@
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             grid-column-gap: 11%;
-            max-width: 1062px;
+            max-width: 1075px;
             position: relative;
             z-index: 3;
             text-align: center;
     
             & > div {
-                max-width: 250px;
+                max-width: 270px;
                 .img {
                     background-size: contain;
-                    height: 133px;
-                    width: 160px;
+                    height: 108px;
+                    width: 120px;
                     max-width: 100%;
                     max-height: 100%;
                     background-position-y: top;
                     background-position-x: left;
                     margin: 0 auto;
+                    position: relative;
                 }
                 h4 {
                     font-size: 25px;
@@ -202,7 +204,47 @@
                 p {
                     max-width: 290px;
                     margin: 1.7vw 0 0 0;
-                    line-height: 1.8;
+                }
+
+                &:nth-of-type(1) .img {
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        z-index: -1;
+                        top: 1vw;
+                        left: -1vw;
+                        width: 5vw;
+                        height: 5vw;
+                        background-color: #FFFAEA;
+                    }
+                }
+                &:nth-of-type(2) .img {
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        z-index: -1;
+                        top: -1.2vw;
+                        left: 2vw;
+                        width: 6vw;
+                        height: 6vw;
+                        border-radius: 50%;
+                        background-color: $pink_3;
+                    }
+                }
+                &:nth-of-type(3) .img {
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        z-index: -1;
+                        top: 2vw;
+                        right: -1.2vw;
+                        width: 0;
+                        height: 0;
+                        border-style: solid;
+                        border-width: 4.7vw 0 0 4.8vw;
+                        border-color: transparent transparent transparent $blue_2;
+                        transform: rotate(-90deg);
+                    }
                 }
             }
         }
@@ -216,7 +258,7 @@
 // cascade-text-img-section
 .cascade-text-img-section {
     position: relative;
-    margin-top: 5vw;
+    margin-top: 10vw;
 
     &:before {
         content: "";
@@ -234,13 +276,12 @@
         position: absolute;
         z-index: 1;
         background-repeat: no-repeat;
-        background-size: cover;
-        width: 6vw;
-        height: 6vw;
-        left: 2vw;
-        top: 12vw;
-        transform: rotate(90deg);
-        background-image: url(../img/dots-decore.svg);
+        background-size: contain;
+        width: 5.8vw;
+        height: 5.5vw;
+        left: 2.3vw;
+        top: 12.6vw;
+        background-image: url(../img/rectangle-w7h7-purple.svg);
     }
 
     .inner {
@@ -279,14 +320,18 @@
                 grid-row-gap: 0;
                 padding: 7.4vw 0;
                 .item {
-                    max-width: 283px;
+                    max-width: 318px;
                     width: 100%;
+                    h4 {
+                        font-size: 24px;
+                    }
                     p {
                         margin: 25px 0 0 0;
-                        line-height: 1.9;
+                        font-weight: 600;
                     }
+
                     &:nth-of-type(2n) {
-                        padding: 6vw 0 0 35px;
+                        padding: 5.8vw 0 0 35px;
                     }
                 }
             }
@@ -298,18 +343,17 @@
                 &:before {
                     content: "";
                     position: absolute;
-                    background-color: #e6b4d7;
+                    background-color: $pink_4;
                     bottom: -10vw;
                     right: 9.3vw;
                     width: 8vw;
                     height: 13vw;
-                    z-index: 2;
-                    opacity: .3;
+                    z-index: 1;
                 }
                 &:after {
                     content: "";
                     position: absolute;
-                    z-index: 1;
+                    z-index: 2;
                     background-repeat: no-repeat;
                     background-size: cover;
                     width: 6vw;
@@ -317,7 +361,7 @@
                     right: 13vw;
                     bottom: -9vw;
                     transform: rotate(90deg);
-                    background-image: url(../img/dots-decore.svg);
+                    background-image: url(../img/rectangle-w7h7-purple.svg);
                 }
 
                 .wrap {
@@ -337,11 +381,11 @@
                 .bot-block {
                     .img {
                         position: absolute;
-                        left: 0;
-                        bottom: 0;
+                        left: -3vw;
+                        bottom: -5vw;
                         top: unset;
-                        width: 17vw;
-                        height: 15vw;
+                        width: 31.8vw;
+                        height: 27vw;
                         background-size: contain;
                         z-index: 3;
                     }
@@ -362,7 +406,7 @@
                     &:before {
                         content: '';
                         position: absolute;
-                        background-color: $turquoise;
+                        background-color: #B7FFF7;
                         top: 0;
                         right: 1.5vw;
                         width: 5.4vw;
@@ -387,10 +431,9 @@
                         background-size: contain;
                         width: 5vw;
                         height: 5vw;
-                        right: 3vw;
+                        right: 0.6vw;
                         top: -4vw;
-                        transform: rotate(90deg);
-                        background-image: url(../img/dots-decore.svg);
+                        background-image: url(../img/dots-flash-green.svg);
                     }
                 }
             }
