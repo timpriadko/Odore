@@ -107,9 +107,12 @@
         background-color: #fff;
 
         .slick-dots {
+            display: flex;
+            text-align: center;
             li {
                 font-size: 14px;
                 width: 35px;
+                display: flex;
                 &.slick-active {
                     font-size: 22px;
                     &:after {
