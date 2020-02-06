@@ -38,7 +38,7 @@
       <ul class="main-nav">
         <li><a href="sampling-device.html" class="btn btn-black">Sampling device</a></li>
         <li><a href="online-campaign.html" class="btn btn-black">Online campaign</a></li>
-        <li><a href="contact.html" class="btn btn-black">Contact</a></li>
+        <li><a href="contact.html" class="btn btn-black active">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -407,24 +407,6 @@
             styles: mapStyleSilver
         })
     };
-    
-    // var map_2;
-    // function initMap_2() {
-    //     var LondonOffice = {lat: 51.500996, lng: -0.162472};
-    //     var optionsLondon = {
-    //         center: LondonOffice,
-    //         zoom: 15,
-    //         styles: mapStyleSilver
-    //     }
-    //     map_2 = new google.maps.Map(document.getElementById('map_2'), optionsLondon);
-
-    //     // var image = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAYAAAA6oTAqAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAYmSURBVHgBzZrPU9tGFMff7sqyLWNjEwMhNEzjyQ/S0FzaQ6/9Jzg2h0wnt/4P/RdyaKeH/jjlwKU99dxLZ3popkknaWGamgwpvwKJMbJlSd4f3RXYYLBlrSwInxmPQdqV9qv39r23KyNIkOsPf05vv3d3zLD3chwZhGdM82Qbo+W0/JTlZS3fWfhjs/XLl59SSAgEI1L+aTnP6rQkB1gk3E+DJsI096HWfjPtYfvFFzc8GIHYYvKPVsryq4y4yENCIA67k3tkI64obTHKEtRGFY6ECWdEXFGRxVx/+E96u8yvJWmJMLCHfEZh3X5wazdqn0hilDXaNrkhECNwzigr1TO31mARsaFthzWYelSddrk/B+8QZaVyEy8Pc7tQMZd+WJltG+IKXACiCBoo5iIJ6TBMEO53cPyrP0sXTYiCp4W5VYDrg86fEqOiFsqn3+kcCQMbzJr47sXVvudOHlDh9yxzSBJQk14uf7t8KkX0iFFZPak8IkNqHiNyxQCjoj4I4zkEpISBZyEBKKAKLImeVGEc/4cwmOUjVGsYcNZA5Coj4gqWlWZwEHVuRA4fXRoQgprg7U0uYANiouaPxVamHTi6Rnfoh1a5BjGQAgxBcAVz0JprAnGXc1aNKwoJzurp2087CbXrZsoqEANlDcD4E10hB4PBGYJSH8hnUYEYCIRJjj4rH41FUvxxtRhn0ishmJCPkIAMjIAhUCWuIMxyxaPxSITtlUAT5VpJCOleTwmSQQI0QcgvdCLbgZshri1GzZGkhHSQQeKmioKgiWMd9MGqIla+p9M5cK8YcyTStVOpm6AJoWYgRi7J2xaBlF5nhIf6d4og4+rkpXIhY47L9obPuLtVq+/s2M39sH5YQInLfCSA1SAiGNyc+jYMmrIEBi1kLpoM65JLm+m7czN3TEKO7wkUJqzM1Gu7sfn3+uuXEDY4hCeZiC4m8Cy5mYK5gbQ2IYwgiyNj0PkBQrpM5cdmbs9OvQ8hyKQ6CZoU8zNZaVW9+cJEeLkzVRybGCSk20YKUm446LzM5FkhoyXojGs8Q6QYvaUwxiQ0gk1Y1gRE4PLEeGgENTjXEqPQnC2qgwiNFqZBIrltJmVo77ENQ1sMB9QOO+9TFml7qNHym5Aw+mI4c8PO11ruGxiCz5i3u2/bYW0YEqH3OQmpuwwTwVtanRAKHUR1a3er5bedsDbbdXujzcTAPWYmwu/Rjz2eZdinXGvXkMpkxkGEbnY/X99errvuWzg1SKCv3u6tVl+/3Qrrj0BEzjFd8rccI5UvNsFpaPWT9dOadNCBVUDT870nLzdWJsdzhWIuW1DHGJdCdt7shlmkA+V0DWksEtW6Rq1pDPu/VqMQKZge0UZiTcbNubDkqdipN/fVBzRgIDaQ5nwRYAb3wCD3oAJlGiDBKBboX0gYAdBijFVBE7kED9wyiGYe55E3pzu0RfuVWstDgnDGq7pWUdhZFgSMQMwYNWINSj6Ep7Iq1I48/aBcVDlim6CJELAPiwu++jsQs3t/3hZt/UEpd5M54zEDHH+XRUZGxvhzGei03evgAqLrVd2kmeZiHWKgBHHu/cUYkgPCWjmLc6hJJb/FsYiCMfDse7e7SborJq51ugND/qZMWb8qUTJ0D3RbZQm5tbQmn4C0aPtxnDnSQdaJPQboCa3KOtL55mEElCh5jU056mBXk+CjUl7IaoONMPgeBK3Z9xZ6Sqee2kxZR75724aEkCtYW1UMnU9SQigmdD8tE/cJThWabvbOOsMw0ivsswY13Y1OBDvO6apZlgVNgy7rJtLzgnqw3vz8w77e038JIFVbjnPhBPnyZa1zf35gGggt52a++d1yLGted1/tLFBC3M/mV8PaDK9Nl56ZOWrMEw6JL3Oj4jfptvtgYW1Yu2iFthSUb6YqKHU+P2jooKKWmuyD5shJtF4tZb9+MmuOmdPn4Xaq5rLTdLVf1BqE/nsyaaWMa8yaGMpwBqgSRWX242VKVOK/9DsUJfN7Pon5FFS/smiMI6LDyL83C/h+tZghXklHmJoPhDGH+WA7tLEHDz52YESSEXOcpSUC9l0LSmOm5TV6hOG0QRuQYbCz1YJS1YPFxUTz2P9natYE6nyvWwAAAABJRU5ErkJggg==';
-    //     // var MarkerLondon = new google.maps.Mark({
-    //     //     position: LondonOffice,
-    //     //     map: map_2,
-    //     //     icon: image
-    //     // })
-    // };
   </script>
   
     <main>
@@ -434,11 +416,33 @@
                     <div id="map_1"></div>
                     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXiwxKwFpoa0Jn9RgZywj5gUCk628P0RU&callback=initMap"
                     async defer></script>
+                    <address>
+                        <h5>Paris</h5>
+                        <p>
+                            Station F - L’Oréal Beauty Tech Atelier
+                        </p>
+                        <p>
+                            5 Parvis Alan Turing, 75013 Paris, France
+                        </p>
+                        <a href="mailti:info@odore.co.uk">info@odore.co.uk</a>
+                    </address>
                 </div>
                 <div class="office-2">
                     <div id="map_2"></div>
                     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXiwxKwFpoa0Jn9RgZywj5gUCk628P0RU&callback=initMap"
                     async defer></script>
+                    <address>
+                        <h5>London</h5>
+                        <p>
+                            1 Knightsbridge Green
+                        </p>
+                        <p>
+                            SW1X 7NE, London, UK
+                        </p>
+
+                        <a href="callto:+4402076501837 ">+44 (0) 207 650 1837 </a>
+                        <a href="mailto:info@odore.co.uk">info@odore.co.uk</a>
+                    </address>
                 </div>
             </div>
             <div class="form-block">
@@ -474,7 +478,7 @@
         </section>
     </main>
   
-  <footer>
+  <footer class="white">
     <nav class="footer-nav">
       <div class="center">
         <div class="flex-container align-center">
@@ -488,8 +492,8 @@
                 <li><a href="online-campaign.html" class="btn btn-simple">Online campaign</a></li>
                 <li><a href="#" class="btn btn-simple">Case studies</a></li>
                 <li><a href="#" class="btn btn-simple">Blog</a></li>
-                <li><a href="#" class="btn btn-simple">Log In</a></li>
-                <li><a href="contact.html" class="btn btn-simple">Contact</a></li>
+                <li><a href="#" class="btn btn-simple">Terms of Use</a></li>
+                <li><a href="#" class="btn btn-simple">Privacy</a></li>
             </ul>
           </div>
         </div>

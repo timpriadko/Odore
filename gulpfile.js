@@ -17,7 +17,9 @@ gulp.task('sass', function(){
 	return gulp.src('app/scss/*.scss')
 		.pipe(sourcemaps.init())
 		.pipe(sass())
-		.pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
+		.pipe(autoprefixer({
+            browsers: ['last 25 versions']
+        }, { cascade: true }))
 		.pipe(cssnano())
 		.pipe(rename({suffix: '.min'}))
 		.pipe(sourcemaps.write())
